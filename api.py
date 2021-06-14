@@ -13,6 +13,7 @@ app.config["DEBUG"] = True
 
 @app.route('/sum', methods=['PUT'])
 def get_sum():
+    """Returns the sum of the 3 numbers passed."""
     try:
         data = json.loads(request.data)
         sm = Sum(3)
@@ -23,7 +24,6 @@ def get_sum():
         return ApiResponse.get_error_response(e.message, e.status_code)
     except Exception as e:
         import traceback
-        print(traceback.format_exc())
         return ApiResponse.get_error_response()
 
 
