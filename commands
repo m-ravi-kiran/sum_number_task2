@@ -1,0 +1,2 @@
+docker image build -t docker-flask-test .
+docker image ls
